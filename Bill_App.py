@@ -2,7 +2,7 @@ from tkinter import*
 import math,random,os
 from tkinter import messagebox
 from typing import Sized
-from keyboard import press
+
 class Bill_App:
     def __init__(self,root):
         self.root=root
@@ -65,21 +65,7 @@ class Bill_App:
         cphn_lbl=Label(F1,text="Phone Number:",bg=bg_color,fg="white",font=("times new roman",15,"bold")).grid(row=0,column=2,padx=20,pady=5)
         cphn_txt=Entry(F1,width=15,textvariable=self.c_phone,font="arial 15",bd=7,relief=SUNKEN).grid(row=0,column=3,padx=10,pady=5) 
 
-        #==============================practice================
-        if self.c_name.get()=="" or self.c_phone.get()=="":
-            def go_to_next_entry(event, entry_list, this_index):
-                    next_index = (this_index + 1) % len(entry_list)
-                    entry_list[next_index].focus_set()
-            entries = [child for child in F1.winfo_children() if isinstance(child, Entry)]
-            for idx, entry in enumerate(entries):
-                entry.bind('<Return>', lambda e, idx=idx: go_to_next_entry(e, entries, idx))        
-        else:
-            
-            go_to_next_entry:self.F2
-                      
-        #======================================================            
-
-
+   
         c_bill_lbl=Label(F1,text="Bill Number:",bg=bg_color,fg="white",font=("times new roman",15,"bold")).grid(row=0,column=4,padx=20,pady=5)
         c_bill_txt=Entry(F1,width=15,textvariable=self.search_bill,font="arial 15",bd=7,relief=SUNKEN).grid(row=0,column=5,padx=10,pady=5) 
 
